@@ -25,7 +25,7 @@ jobs:
           with:
             node-version: 20
     
-            
+
         - name: Install Dependencies
           run: npm install
     
@@ -33,6 +33,7 @@ jobs:
           run: npm test
           
         - name: Archive Test Result
+          if: always() #added
           uses: actions/upload-artifact@v3
           with:
             name: Mocha-Test-Result
