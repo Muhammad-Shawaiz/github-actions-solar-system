@@ -29,11 +29,12 @@ jobs:
         #   env:
         #     MONGO_PASSWORD: ${{ secrets.MONGO_PASSWORD }}
         #   run: echo "Your MongoDB password is $MONGO_PASSWORD"
-        - name: Cache NPM Dependencies
+        - name: Cache NPM dependencies
           uses: actions/cache@v3
           with:
             path: ~/.npm
-            key: '${{ runner.os}}-node-modules-${{ hashFiles('package-lock.json') }}'
+            key: '${{ runner.os }}-node-modules-${{ hashFiles(''package-lock.json'') }}'
+
         - name: Install Dependencies
           run: npm install
     
