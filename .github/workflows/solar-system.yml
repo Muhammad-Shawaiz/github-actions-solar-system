@@ -1,5 +1,6 @@
 name: Solar System Workflow
-'on':
+
+on:
   workflow_dispatch: null
   push:
     branches:
@@ -9,6 +10,7 @@ env:
   MONGO_URI: 'mongodb+srv://supercluster.d83jj.mongodb.net/superData'
   MONGO_USERNAME: superuser
   MONGO_PASSWORD: '${{ secrets.MONGO_PASSWORD }}'
+
 jobs:
   unit-testing:
     name: Unit Testing
